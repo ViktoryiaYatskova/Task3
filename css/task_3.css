@@ -57,10 +57,8 @@ input[type='button']:hover, input[type='submit']:hover, label:hover, a:hover {
     cursor: pointer;
 }
 
-header {
-}
 header>div {
-    display: inline-block;
+    display: block;
     margin: 3% 2%;
 
     font-family: BHS55c, Delicious, Calibri, sans-serif;
@@ -85,6 +83,10 @@ nav.header-menu a {
 
     border-left: #f1c5cd 1px solid;
 }
+nav.header-menu a:hover {
+    color: white;
+}
+
 nav.header-menu a:first-of-type,
 nav.header-menu a:last-of-type {
     border-left: none;
@@ -94,19 +96,18 @@ nav.header-menu a:nth-of-type(5) {
     float: right;
 }
 
-header::after {
-    display: block;
-    content: "";
-    clear: both;
-}
 .award {
     position: relative;
     float: right;
-    margin: 0;
-    top: -20px;
-    width: 1px;
-    height: 1px;
+    top: -40px;
+
+    width: 88px;
+    height: 176px;
+    margin: 0 0 -100%;
+
     overflow: visible;
+    background: url("../assets/img/beste-award.png") no-repeat center;
+    background-size: 88px 176px;
 }
 .award>img {
     width: 88px;
@@ -131,45 +132,59 @@ aside {
     font-weight: bold;
 }
 nav.vine-kind-menu {
-    display: flex;
+    display: block;
+    /*display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    align-content: space-between;
+    align-content: space-between;*/
 
     width: 100%;
     margin: 0;
-    padding: 4%;
+    padding: 4% 0;
+
+    font-size: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+nav.vine-kind-menu>div {
+    min-height: 2em;
+    width: 100%;
+    padding: 0 1em;
+    margin: 0 auto;
+
+    font-weight: bold;
+    font-size: 16px;
+}
+nav.vine-kind-menu label {
+    /*display: inline-flex;
+    flex-basis: 32%;*/
+    overflow: visible;
+    margin: 1% 0;
+
+    display: inline-block;
+    min-width: 33%;
+}
+nav.vine-kind-menu input[type="checkbox"] {
+    display: none;
+}
+nav.vine-kind-menu input[type="checkbox"]:checked+label>img {
+    background-color: #520929;
+}
+nav.vine-kind-menu label>img {
+    display: block;
+    margin: 0 auto;
+    padding: 1% 12%;
+    width: auto;
+    min-height: 55px;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-}
-nav.vine-kind-menu>div {
-    min-height: 2em;
-    width: 100%;
-    margin: 0 auto;
-
-    font-weight: bold;
-}
-nav.vine-kind-menu label {
-    display: inline-flex;
-    flex-basis: 32%;
-
     border-radius: 10%;
-    margin: 0.5%;
-}
-nav.vine-kind-menu input[type="checkbox"] {
-    display: none;
-}
-nav.vine-kind-menu input[type="checkbox"]:checked+label {
-    background-color: #520929;
-}
-nav.vine-kind-menu label>img {
-    margin: 0 auto;
-    height: 100%;
-    min-width: 40px;
 }
 
 div.price-field {
@@ -344,6 +359,8 @@ article.vines>nav.vines-catalog::after, article.vines>nav.vines-catalog::before 
     font-size: 36px;
     font-weight: bold;
     overflow: visible;
+
+    cursor: pointer;
 }
 article.vines>nav.vines-catalog::before {
     float: left;
@@ -354,14 +371,97 @@ article.vines>nav.vines-catalog::after {
     float: right;
     content: "→";
 }
-
 article.vines>nav.vines-catalog>a {
     display: inline-block;
     width: 20%;
+    min-height: 230px;
+    vertical-align: bottom;
 
     text-align: center;
+    background: url("../assets/pic/bottle.png") no-repeat center;
+    background-size: auto 100%;
 }
+article.vines>nav.vines-catalog>a:hover {
+
+    background: rgba(222,222,222,0);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    background-image: url(../assets/pic/bottle.png),
+    -moz-linear-gradient(top, rgba(222,222,222,0) 0%, rgba(235,230,235,0.31) 31%, rgba(235,230,235,0.35) 35%, rgba(235,230,235,1) 100%);
+    background-image: url(../assets/pic/bottle.png),
+    -webkit-gradient(left top, left bottom, color-stop(0%, rgba(222,222,222,0)), color-stop(31%, rgba(235,230,235,0.31)), color-stop(35%, rgba(235,230,235,0.35)), color-stop(100%, rgba(235,230,235,1)));
+    background-image: url(../assets/pic/bottle.png),
+    -webkit-linear-gradient(top, rgba(222,222,222,0) 0%, rgba(235,230,235,0.31) 31%, rgba(235,230,235,0.35) 35%, rgba(235,230,235,1) 100%);
+    background-image: url(../assets/pic/bottle.png),
+    -o-linear-gradient(top, rgba(222,222,222,0) 0%, rgba(235,230,235,0.31) 31%, rgba(235,230,235,0.35) 35%, rgba(235,230,235,1) 100%);
+    background-image: url(../assets/pic/bottle.png),
+    -ms-linear-gradient(top, rgba(222,222,222,0) 0%, rgba(235,230,235,0.31) 31%, rgba(235,230,235,0.35) 35%, rgba(235,230,235,1) 100%);
+    background-image: url(../assets/pic/bottle.png),
+    linear-gradient(to bottom, rgba(222,222,222,0) 0%, rgba(235,230,235,0.31) 31%, rgba(235,230,235,0.35) 35%, rgba(235,230,235,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#ebe6eb', GradientType=0 );
+}
+a>ul {
+    position: relative;
+    float: right;
+    top: 20px;
+    height: 0;
+}
+a .bicycle {
+    position: relative;
+    float: right;
+    top: 35px;
+    right: 10px;
+}
+a>.price {
+    position: relative;
+    top: 80px;
+    right: -35px;
+
+    display: inline-block;
+    width: 44px;
+    height: 46px;
+
+    color: white;
+    font-size: 16px;
+
+    background:  url(../assets/pic/price.png)no-repeat;
+    background-size: auto 100%;
+}
+a>.price b {
+    font-size: 2em;
+}
+a>ul>li {
+    display: inline-block;
+    list-style-type: none;
+}
+a>ul li::after {
+    display: block;
+    content: url(../assets/pic/star-award.png);
+    overflow: visible;
+}
+a .show-by-hover {
+    visibility: hidden;
+}
+nav.vines-catalog .vine-name {
+    position: relative;
+    top: 120px;
+    bottom: 0;
+
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 15%;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+a:hover .show-by-hover {
+    visibility: visible;
+}
+
 div.vine-description {
+    padding: 1%;
     border-radius: 15px;
 
     background: -moz-linear-gradient(top,  rgba(196,196,196,1) 0%, rgba(196,196,196,0.99) 1%, rgba(226,226,226,0.94) 6%, rgba(247,247,247,0.86) 14%, rgba(249,249,249,0) 100%); /* FF3.6+ */
@@ -385,58 +485,108 @@ div.vine-description span::after {
     width: 100%;
 
 }
-div.vine-description div:first-of-type {
+div.color-vine-data {
     position: relative;
     top: -1.7em;
     float: right;
+    height: 2em;
+    overflow: visible;
     max-width: 35%; /*????????????????????????????*/
     line-height: 1em;
     text-align: right;
 }
-div.vine-description>div {
+
+div.vine-description>div>div {
     display: inline-block;
+    vertical-align: top;
+    /*max-width: 10%;*/
+    min-width: 100px;
+    padding-right: 1em;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-div.vine-description ul {
+div.vine-description>div>div:first-of-type {
+    max-width: 310px;
+    min-width: 200px;
+}
+div.vine-description>div>div:nth-of-type(4) {
+    min-width: 150px;
+    /*max-width: 25%;*/
+}
+div.vine-description>div>div:last-of-type {
+    /*max-width: none;*/
+    min-width: 50px;
+}
+div.color-vine-data ul {
     display: inline-block;
-    padding: 0.5em 0;
+    padding: 0.5em 1em;
     margin: 0;
+
 }
-div.vine-description>div>img {
+div.color-vine-data img {
     padding: 0 0 0 0.5em;
 }
-div.vine-description>div:first-of-type ul>li {
+div.color-vine-data ul>li {
     display: inline;
     padding: 0;
     list-style: none;
     width: 2em;
 }
-div.vine-description>div:first-of-type ul>li::before {
+div.color-vine-data ul>li::before {
     font-family: fontello, sans-serif;
     content: '\e800';
     font-size: 1.5em;
     font-weight: normal;
 }
-/*div.vine-description>div:first-of-type::after {
-    display: block;
-}*/
-div.vine-description .character {
-    max-width: 24%;
+div.vine-description ul {
+    padding-left: 1em;
 }
 div.vine-description .taste li{
     display: inline-block;
     list-style: none;
 }
-footer {
-    height: 250px;
-    padding: 3% 0;
+div.vine-description input[type="button"] {
+    float: right;
+    padding: 0.6em 1em;
 
+    -webkit-border-radius: 8px 0 8px 0 / 10px 0 10px 0;
+    -moz-border-radius: 8px 0 8px 0 / 10px 0 10px 0;
+    border-radius: 8px 0 8px 0 / 10px 0 10px 0;
+
+    border: none;
+
+    font-family: Calibri, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+.full-description {
+    color: #ffc4da;
+}
+.add-vine {
     background-color: #94b500;
 }
+footer {
+    height: 250px;
+    padding: 35px 0;
+
+    background-color: #94b500;
+    color: #344600;
+}
 section.columns {
+    position: relative;
     height: 100%;
     padding-bottom: 3%;
 
     font-size: 0;
+}
+footer>img {
+    position: relative;
+    margin-bottom: -100%;
+    top: -50px;
+    float: right;
+    overflow: visible;
 }
 div.column {
     float: left;
@@ -444,9 +594,9 @@ div.column {
     height: 100%;
     padding: 0 2%;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
 
     border-left: #344600 1px solid;
 
@@ -539,10 +689,15 @@ div.slogan {
     background-color: gainsboro;
 }
 /* Clearfix */
+header::after,
 body>section::after,
 footer>section::after,
-div.vine-description div::after,
-div.vine-description>div:first-of-type {
+div.color-vine-data::after,
+div.vine-description>div:last-of-type::before,
+div.vine-description input[type="button"]::after,
+div.vine-description>div:last-of-type::after,
+a .stars::after,
+footer>img::after {
     display: block;
     width: 100%;
     clear: both;
